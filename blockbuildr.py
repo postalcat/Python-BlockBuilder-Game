@@ -85,7 +85,7 @@ class Block(Button):
             color=color.white,
             highlight_color=color.light_gray
         )
-    @classmethod
+    @classmethod #class method so i can call later without problem as well as intergrate larger data structures and still apply to individual voxel
     def change_block(cls, key):
         if key == "1":
             cls.active_texture = "sparegrass"
