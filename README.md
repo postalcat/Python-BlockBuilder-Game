@@ -2,10 +2,10 @@
 A basic game that runs on ursina engine that allows you to create and destroy small structures.
 
 
-Make sure to install ursina(pip install ursina)
+#Make sure to install ursina(pip install ursina)
 
 
-IF USING MACOS/DARWIN:
+#IF USING MACOS/DARWIN:
 
 Download the fixed ursina file and replace your previous with this one; as it has darwin cursor enabled properly.
 
