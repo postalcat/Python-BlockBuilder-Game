@@ -15,7 +15,7 @@ class Tree(Entity):
         self.position_y = position[1]
         self.position_x = position[0]
         self.position_z = position[2]
-        # Create the trunk
+        #create the trunk
         for i in range(3):
             Block(position=(position[0], 
                             position[1] + i, 
