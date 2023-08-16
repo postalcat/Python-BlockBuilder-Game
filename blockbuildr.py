@@ -171,7 +171,7 @@ def reset_textures(exception):
     for i in range(4):
         blocks[i].color = color.white
     blocks[exception].color = color.dark_gray
-if __name__ == "__main__":
+if __name__ == "__main__":#runs code on toplevel only(like frontend on website)
     app = Ursina()
     skybox_image = load_texture("x.png")
     Sky(texture=skybox_image)
