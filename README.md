@@ -1,5 +1,6 @@
 # Python-BlockBuilder-Game
 A basic game that runs on ursina engine that allows you to create and destroy small structures.
+Textures are copyright free(albeit a bit ugly)
 
 
 #Make sure to install ursina(pip install ursina)
