@@ -32,7 +32,7 @@ class Tree(Entity):
                     Block(position=(self.position_x - x_offset, self.position_y + 5, self.position_z + z_offset),texture="leave.png")
 def set_inventory():
     global blocks 
-    textlist = ["grass", "dirt.png", "stone.png", "wood.png"]
+    textlist = ["sparegrass", "dirt.png", "stone.png", "wood.png"]
     blocks = []
     Entity(parent=camera.ui, model="quad", texture="white_cube", scale=(0.45, 0.13), position=(-0.05, -0.45))
     for i in range(4):
@@ -51,8 +51,8 @@ def set_inventory():
     print(blocks)
     return blocks
 class Block(Button):
-    active_texture = "grass"
-    def __init__(self, position=(0, 0, 0), texture="grass"):
+    active_texture = "sparegrass"
+    def __init__(self, position=(0, 0, 0), texture="sparegrass"):
         super().__init__(
             parent=scene,
             model="cube",
@@ -64,7 +64,7 @@ class Block(Button):
     @classmethod
     def change_block(cls, key):
         if key == "1":
-            cls.active_texture = "grass"
+            cls.active_texture = "sparegrass"
             reset_textures(0)
         elif key == "2": 
             cls.active_texture = "dirt.png"
@@ -100,7 +100,7 @@ class Island(Entity):
                 Block(position=(x + position[0], 
                                 position[1], z + 
                                 position[2]), 
-                                texture="grass.png"
+                                texture="sparegrass"
                                 )
         for x in range(-10, 10):
             for z in range(-10, 10):
@@ -158,6 +158,6 @@ if __name__ == "__main__":
     def input(key):
         Block.change_block(key)
     island = Island((0,0,0))
-    active_texture = "grass"
+    active_texture = "sparegrass"
     set_inventory()
     app.run()
