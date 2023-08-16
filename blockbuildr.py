@@ -17,24 +17,46 @@ class Tree(Entity):
         self.position_z = position[2]
         # Create the trunk
         for i in range(3):
-            Block(position=(position[0], position[1] + i, position[2]),texture="download.png")
+            Block(position=(position[0], 
+                            position[1] + i, 
+                            position[2]),
+                            texture="download.png")
         # Create the leaves
         for x_offset in range(-2, 3):
             for z_offset in range(-2, 3):
                 if abs(x_offset) + abs(z_offset) <= 3:  # Only create leaves within the circular area
-                    Block(position=(self.position_x + x_offset, self.position_y + 3, self.position_z + z_offset),texture="leave.png")
-                    Block(position=(self.position_x - x_offset, self.position_y + 3, self.position_z + z_offset),texture="leave.png")
-                    Block(position=(self.position_x + x_offset, self.position_y + 4, self.position_z + z_offset),texture="leave.png")
-                    Block(position=(self.position_x - x_offset, self.position_y + 4, self.position_z + z_offset),texture="leave.png")
+                    Block(position=(self.position_x + x_offset, 
+                                    self.position_y + 3, 
+                                    self.position_z + z_offset),
+                                    texture="leave.png")
+                    Block(position=(self.position_x - x_offset, 
+                                    self.position_y + 3, 
+                                    self.position_z + z_offset),
+                                    texture="leave.png")
+                    Block(position=(self.position_x + x_offset, 
+                                    self.position_y + 4, 
+                                    self.position_z + z_offset),
+                                    texture="leave.png")
+                    Block(position=(self.position_x - x_offset, 
+                                    self.position_y + 4, 
+                                    self.position_z + z_offset),
+                                    texture="leave.png")
         for x_offset in range(-1, 2):
             for z_offset in range(-1, 2):
                 if abs(x_offset) + abs(z_offset) <= 3:
-                    Block(position=(self.position_x - x_offset, self.position_y + 5, self.position_z + z_offset),texture="leave.png")
+                    Block(position=(self.position_x - x_offset, 
+                                    self.position_y + 5, 
+                                    self.position_z + z_offset),
+                                    texture="leave.png")
 def set_inventory():
     global blocks 
     textlist = ["sparegrass", "dirt.png", "stone.png", "wood.png"]
     blocks = []
-    Entity(parent=camera.ui, model="quad", texture="white_cube", scale=(0.45, 0.13), position=(-0.05, -0.45))
+    Entity(parent=camera.ui, 
+            model="quad", 
+            texture="white_cube", 
+            scale=(0.45, 0.13), 
+            position=(-0.05, -0.45))
     for i in range(4):
         counter = float(i/10)
         x = Entity(
@@ -52,7 +74,9 @@ def set_inventory():
     return blocks
 class Block(Button):
     active_texture = "sparegrass"
-    def __init__(self, position=(0, 0, 0), texture="sparegrass"):
+    def __init__(self, 
+                position=(0, 0, 0), 
+                texture="sparegrass"):
         super().__init__(
             parent=scene,
             model="cube",
@@ -78,7 +102,8 @@ class Block(Button):
     def input(self, key):
         player_position = player.position
         block_placement_position = self.position
-        if calculate_distance_3d(player_position, block_placement_position)>=5:
+        if calculate_distance_3d(player_position, 
+        block_placement_position)>=5:
             return 
         else:
             if self.hovered:
