@@ -21,10 +21,10 @@ class Tree(Entity):
                             position[1] + i, 
                             position[2]),
                             texture="download.png")
-        # Create the leaves
+        #create the leaves
         for x_offset in range(-2, 3):
             for z_offset in range(-2, 3):
-                if abs(x_offset) + abs(z_offset) <= 3:  # Only create leaves within the circular area
+                if abs(x_offset) + abs(z_offset) <= 3:  #only create leaves within the circular area
                     Block(position=(self.position_x + x_offset, 
                                     self.position_y + 3, 
                                     self.position_z + z_offset),
